@@ -15,6 +15,7 @@ Table Of Contents:
 - Contact
 - Footer 
 - Copyright
+- Sliding Bar
 - Back To Top Button
 - Extra Pages
 - Media Queries
@@ -889,6 +890,12 @@ input[type='checkbox'] {
     color: #ffffff;
 }
 
+.footer img {
+    max-height: 6rem;
+    display: block;
+    margin: 0 auto;
+	padding: 1.5rem;
+}
 
 /*********************/
 /*     Copyright     */
@@ -909,6 +916,52 @@ input[type='checkbox'] {
 	color: #9da6ac;
 }
 
+.copyright img {
+    max-height: 1.2rem;
+    display: block;
+    margin: 0 auto;
+	padding-top: 0.5rem;
+}
+
+/*********************/
+/*    Sliding Bar    */
+/*********************/
+.sliding-bar {
+	height: 8rem;
+	margin: 1.25rem;
+	overflow: hidden;
+	display: flex;
+    white-space: nowrap;
+	padding: 1.25rem;
+}
+.sliding-content {
+	display: flex;
+    align-items: center;
+    animation: slide 30s infinite linear;
+}
+.sliding-content img {
+	display: flex;
+    width: auto;
+    height: 4rem;
+    margin-right: 2rem;
+}
+.sliding-content img:hover {
+	transform: scale(1.2);
+	transition: all 300ms;
+}
+.sliding-content:hover {
+	animation-play-state: paused;
+	cursor: pointer;
+}
+@keyframes slide {
+	0% {
+		transform: translateX(100rem);
+	}
+    100% {
+        transform: translateX(-200rem);
+    }
+    
+}
 
 /******************************/
 /*     Back To Top Button     */
@@ -1009,6 +1062,13 @@ a:hover.back-to-top {
 		padding-left: 2.125rem;
 	}
 	/* end of services */
+
+
+	/* Sliding Bar */
+	.sliding-bar {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+    }
+	/* end Sliding Bar */
 
 
 	/* Extra Pages */
